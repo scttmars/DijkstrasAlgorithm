@@ -1,0 +1,67 @@
+Scott Marsden
+
+For this assignment I designed a program that can read in adjacency matricies
+and create a graph based on that. Then the program will allow the user to 
+select two verticies from the graph and Dijkstras algorithm will be run
+so the user can know the shortest distance between those two points.
+
+Most of the unexpected things in this assignment were related to bugs I 
+had created. The logic for the most part worked correctly from the start but 
+the two major errors that stalled me were I was not comparing strings properly
+which caused multiple of the same vertex being put in the queue with different
+distances. Second, I accidentally passed in my source vertex without any values
+associated with it which caused many issues with the queue.
+
+JapanCities Sample Output
+
+	Please enter a file name: 
+	JapanCities.txt
+	This is a directed graph.
+	This graph has 30 edges and 9 vertices:
+	Takamatsu in degree: 3 out degree: 3
+		Edges to: IkedaTokushimaKawanoe
+	Tokushima in degree: 3 out degree: 3
+		Edges to: IkedaTakamatsuMuroto
+	Ikeda in degree: 4 out degree: 4
+		Edges to: TakamatsuTokushimaKochiKawanoe
+	Kawanoe in degree: 4 out degree: 4
+		Edges to: IkedaTakamatsuMatsuyamaKochi
+	Kochi in degree: 6 out degree: 6
+		Edges to: IkedaMatsuyamaNakamuraUwajimaKawanoeMuroto
+	Muroto in degree: 2 out degree: 2
+		Edges to: TokushimaKochi
+	Matsuyama in degree: 3 out degree: 3
+		Edges to: KochiUwajimaKawanoe
+	Uwajima in degree: 3 out degree: 3
+		Edges to: MatsuyamaNakamuraKochi
+	Nakamura in degree: 2 out degree: 2
+		Edges to: KochiUwajima
+	Please type starting vertex: 
+	Takamatsu
+	Please type ending vertex: 
+	Nakamura
+	Distance from Takamatsu to Nakamura: 267.0
+	::Takamatsu::Ikeda::Kochi::Nakamura
+
+Routers Sample Output
+
+	Please enter a file name: 
+	Routers.txt
+	This is a directed graph.
+	This graph has 14 edges and 5 vertices:
+	RTR1 in degree: 3 out degree: 3
+		Edges to: RTR4RTR2RTR5
+	RTR2 in degree: 2 out degree: 2
+		Edges to: RTR1RTR3
+	RTR3 in degree: 3 out degree: 3
+		Edges to: RTR1RTR5RTR3
+	RTR4 in degree: 3 out degree: 3
+		Edges to: RTR4RTR5RTR3
+	RTR5 in degree: 3 out degree: 3
+		Edges to: RTR4RTR1RTR2
+	Please type starting vertex: 
+	RTR1
+	Please type ending vertex: 
+	RTR5
+	Distance from RTR1 to RTR5: 0.605
+	::RTR1::RTR4::RTR3::RTR5
